@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,14 @@
 		0550C7AC24E407570099118A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0550C7AA24E407570099118A /* Main.storyboard */; };
 		0550C7AE24E407580099118A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0550C7AD24E407580099118A /* Assets.xcassets */; };
 		0550C7B124E407580099118A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0550C7AF24E407580099118A /* LaunchScreen.storyboard */; };
+		0550C7B924E409620099118A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550C7B824E409620099118A /* AppCoordinator.swift */; };
+		0550C7C124E429A70099118A /* Binary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550C7C024E429A70099118A /* Binary.swift */; };
+		05D598A024E6BDBE0069DF9B /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D5989F24E6BDBE0069DF9B /* Converter.swift */; };
+		05D598A224E6BEC10069DF9B /* BaseConverterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D598A124E6BEC10069DF9B /* BaseConverterProtocol.swift */; };
+		05D598A424E6C5400069DF9B /* Octal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D598A324E6C5400069DF9B /* Octal.swift */; };
+		05D598A624E6C7C00069DF9B /* Decimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D598A524E6C7C00069DF9B /* Decimal.swift */; };
+		05D598A824E6C8EE0069DF9B /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D598A724E6C8EE0069DF9B /* Hex.swift */; };
+		49C5EFC03039ED6352E392AA /* Pods_ConvertyRx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C826A1F549C25727FDE4775C /* Pods_ConvertyRx.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,16 @@
 		0550C7AD24E407580099118A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0550C7B024E407580099118A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0550C7B224E407580099118A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0550C7B824E409620099118A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		0550C7C024E429A70099118A /* Binary.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = Binary.swift; sourceTree = "<group>"; };
+		05D5989F24E6BDBE0069DF9B /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		05D598A124E6BEC10069DF9B /* BaseConverterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseConverterProtocol.swift; sourceTree = "<group>"; };
+		05D598A324E6C5400069DF9B /* Octal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Octal.swift; sourceTree = "<group>"; };
+		05D598A524E6C7C00069DF9B /* Decimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decimal.swift; sourceTree = "<group>"; };
+		05D598A724E6C8EE0069DF9B /* Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hex.swift; sourceTree = "<group>"; };
+		2B18AF851110DFEB9FAC5180 /* Pods-ConvertyRx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConvertyRx.release.xcconfig"; path = "Target Support Files/Pods-ConvertyRx/Pods-ConvertyRx.release.xcconfig"; sourceTree = "<group>"; };
+		C826A1F549C25727FDE4775C /* Pods_ConvertyRx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConvertyRx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC2FF82C771319262973AADF /* Pods-ConvertyRx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConvertyRx.debug.xcconfig"; path = "Target Support Files/Pods-ConvertyRx/Pods-ConvertyRx.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49C5EFC03039ED6352E392AA /* Pods_ConvertyRx.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +61,8 @@
 			children = (
 				0550C7A324E407570099118A /* ConvertyRx */,
 				0550C7A224E407570099118A /* Products */,
+				0B9EB2413F64C7541603EF6A /* Pods */,
+				E662D394A4A888853E28079F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +84,32 @@
 				0550C7AD24E407580099118A /* Assets.xcassets */,
 				0550C7AF24E407580099118A /* LaunchScreen.storyboard */,
 				0550C7B224E407580099118A /* Info.plist */,
+				0550C7B824E409620099118A /* AppCoordinator.swift */,
+				05D5989F24E6BDBE0069DF9B /* Converter.swift */,
+				05D598A124E6BEC10069DF9B /* BaseConverterProtocol.swift */,
+				0550C7C024E429A70099118A /* Binary.swift */,
+				05D598A324E6C5400069DF9B /* Octal.swift */,
+				05D598A524E6C7C00069DF9B /* Decimal.swift */,
+				05D598A724E6C8EE0069DF9B /* Hex.swift */,
 			);
 			path = ConvertyRx;
+			sourceTree = "<group>";
+		};
+		0B9EB2413F64C7541603EF6A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FC2FF82C771319262973AADF /* Pods-ConvertyRx.debug.xcconfig */,
+				2B18AF851110DFEB9FAC5180 /* Pods-ConvertyRx.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E662D394A4A888853E28079F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C826A1F549C25727FDE4775C /* Pods_ConvertyRx.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +119,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0550C7B524E407580099118A /* Build configuration list for PBXNativeTarget "ConvertyRx" */;
 			buildPhases = (
+				68366C3D84A5F13297E658BC /* [CP] Check Pods Manifest.lock */,
 				0550C79D24E407570099118A /* Sources */,
 				0550C79E24E407570099118A /* Frameworks */,
 				0550C79F24E407570099118A /* Resources */,
+				5B8D401057715E19E81D07C2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,13 +180,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5B8D401057715E19E81D07C2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ConvertyRx/Pods-ConvertyRx-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ConvertyRx/Pods-ConvertyRx-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ConvertyRx/Pods-ConvertyRx-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68366C3D84A5F13297E658BC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ConvertyRx-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0550C79D24E407570099118A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05D598A624E6C7C00069DF9B /* Decimal.swift in Sources */,
+				05D598A824E6C8EE0069DF9B /* Hex.swift in Sources */,
+				0550C7B924E409620099118A /* AppCoordinator.swift in Sources */,
+				05D598A424E6C5400069DF9B /* Octal.swift in Sources */,
+				0550C7C124E429A70099118A /* Binary.swift in Sources */,
 				0550C7A924E407570099118A /* ViewController.swift in Sources */,
+				05D598A224E6BEC10069DF9B /* BaseConverterProtocol.swift in Sources */,
 				0550C7A524E407570099118A /* AppDelegate.swift in Sources */,
+				05D598A024E6BDBE0069DF9B /* Converter.swift in Sources */,
 				0550C7A724E407570099118A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,11 +378,13 @@
 		};
 		0550C7B624E407580099118A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC2FF82C771319262973AADF /* Pods-ConvertyRx.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W7PJV9H8MC;
 				INFOPLIST_FILE = ConvertyRx/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,11 +398,13 @@
 		};
 		0550C7B724E407580099118A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B18AF851110DFEB9FAC5180 /* Pods-ConvertyRx.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W7PJV9H8MC;
 				INFOPLIST_FILE = ConvertyRx/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
