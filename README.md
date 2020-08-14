@@ -1,5 +1,5 @@
 # ConvertyRx
-Old project rewritten using RxSwift
+Base number converter (binary, octal, decimal, hex)
 
 
 ## Prerequites
