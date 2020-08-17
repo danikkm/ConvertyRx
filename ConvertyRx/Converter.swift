@@ -78,7 +78,6 @@ public class Converter: ConversionProtocol {
         if inputNumber.isEmpty {
             return true
         }
-
         if inputNumber.components(separatedBy: ".").count - 1 <= 1 {
             if inputNumber.range(of: "^(?=.)([+-]?([\(inputBase.rawValue)]*)(\\.([\(inputBase.rawValue)]+))?)$", options: .regularExpression) != nil {
                 return true

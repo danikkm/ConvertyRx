@@ -14,11 +14,8 @@ class ViewController: UIViewController {
     let disposeBag = DisposeBag()
     
     @IBOutlet weak var binaryTextField: UITextField!
-    
     @IBOutlet weak var octalTextField: UITextField!
-        
     @IBOutlet weak var decimalTextField: UITextField!
-    
     @IBOutlet weak var hexTextField: UITextField!
     
     private let binary = Binary()
@@ -36,14 +33,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "Converty"
         navigationController?.navigationBar.prefersLargeTitles = true
-        configure()
+        self.configure()
     }
 
-    // TODO:
-    //      combine binary hex functions into one
-    //      add additional zeros to binary numbers eg: triplets and quadruplets
-    //      replace some if statements with iflet?
-    
+    // TODO: combine binary hex functions into one
+    // TODO: add additional zeros to binary numbers eg: triplets and quadruplets
+    // FIXME:  replace some if statements with iflet?
+
     private func configure(){
         binaryTextField.rx.controlEvent([.editingChanged]).asObservable().subscribe({
             [unowned self] _ in
@@ -74,4 +70,3 @@ class ViewController: UIViewController {
         }).disposed(by: disposeBag)
     }
 }
-

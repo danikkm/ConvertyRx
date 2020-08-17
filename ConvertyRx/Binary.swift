@@ -15,7 +15,7 @@ final class Binary: BaseBinaryConverterProtocol {
                 if let range = binary.range(of: ".") {
                     let fractional = binary[range.upperBound...]
                     var fractionalSplit = Converter().splitStr(text: String(fractional), length: 3)
-                    let mainPart = binary[..<range.lowerBound]
+                    let integerPart = binary[..<range.lowerBound]
 
                     for (i, fraction) in fractionalSplit.enumerated() {
                         if fraction.count % 2 != 0 {
@@ -31,7 +31,7 @@ final class Binary: BaseBinaryConverterProtocol {
                     }
                     let pFractional = fractionalSplit.joined(separator: "")
                     
-                    return (Converter().convertBase(fromBase: .binary, number: String(mainPart), toBase: .octal).getString ?? "") +
+                    return (Converter().convertBase(fromBase: .binary, number: String(integerPart), toBase: .octal).getString ?? "") +
                         "." + (Converter().convertBase(fromBase: .binary, number: String(pFractional), toBase: .octal).getString ?? "")
                 }
             } else {
@@ -46,8 +46,9 @@ final class Binary: BaseBinaryConverterProtocol {
             if binary.contains(".") {
                 if let range = binary.range(of: ".") {
                     let fractional = binary[range.upperBound...]
-                    let mainPart = binary[..<range.lowerBound]
+                    let integerPart = binary[..<range.lowerBound]
                     var (baseDecimalFraction, decimalFraction) = (1.0, 0.0)
+                    
                     for fraction in fractional {
                         switch fraction {
                         case "0":
@@ -59,7 +60,7 @@ final class Binary: BaseBinaryConverterProtocol {
                             return "Error"
                         }
                     }
-                    return String((Converter().convertBase(fromBase: .binary, number: String(mainPart), toBase: .decimal).getDouble ?? 0.0) + decimalFraction)
+                    return String((Converter().convertBase(fromBase: .binary, number: String(integerPart), toBase: .decimal).getDouble ?? 0.0) + decimalFraction)
                 }
             } else {
                 return String(Converter().convertBase(fromBase: .binary, number: String(binary), toBase: .decimal, isDouble: false).getString ?? "")
@@ -74,7 +75,7 @@ final class Binary: BaseBinaryConverterProtocol {
                 if let range = binary.range(of: ".") {
                     let fractional = binary[range.upperBound...]
                     var fractionalSplit = Converter().splitStr(text: String(fractional), length: 4)
-                    let mainPart = binary[..<range.lowerBound]
+                    let integerPart = binary[..<range.lowerBound]
 
                     for (i, fraction) in fractionalSplit.enumerated() {
                         if fraction.count % 2 != 0 {
@@ -89,7 +90,8 @@ final class Binary: BaseBinaryConverterProtocol {
                     }
 
                     let pFractional = fractionalSplit.joined(separator: "")
-                    return (Converter().convertBase(fromBase: .binary, number: String(mainPart), toBase: .hex).getString ?? "") + "." + (Converter().convertBase(fromBase: .binary, number: String(pFractional), toBase: .hex).getString ?? "")
+                    
+                    return (Converter().convertBase(fromBase: .binary, number: String(integerPart), toBase: .hex).getString ?? "") + "." + (Converter().convertBase(fromBase: .binary, number: String(pFractional), toBase: .hex).getString ?? "")
                 }
             } else {
                 return Converter().convertBase(fromBase: .binary, number: String(binary), toBase: .hex).getString ?? ""

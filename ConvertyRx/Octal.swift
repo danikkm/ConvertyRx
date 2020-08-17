@@ -14,9 +14,9 @@ final class Octal: BaseOctalConverterProtocol {
             if octal.contains(".") {
                 if let range = octal.range(of: ".") {
                     let fractional = octal[range.upperBound...]
-                    let mainPart = octal[..<range.lowerBound]
+                    let integerPart = octal[..<range.lowerBound]
 
-                    return (Converter().convertBase(fromBase: .octal, number: String(mainPart), toBase: .binary).getString ?? "") + "." + (Converter().convertBase(fromBase: .octal, number: String(fractional), toBase: .binary).getString ?? "")
+                    return (Converter().convertBase(fromBase: .octal, number: String(integerPart), toBase: .binary).getString ?? "") + "." + (Converter().convertBase(fromBase: .octal, number: String(fractional), toBase: .binary).getString ?? "")
                 }
             } else {
                 return Converter().convertBase(fromBase: .octal, number: String(octal), toBase: .binary).getString ?? ""
@@ -32,18 +32,16 @@ final class Octal: BaseOctalConverterProtocol {
             if octal.contains(".") {
                 if let range = octal.range(of: ".") {
                     let fractional = octal[range.upperBound...]
-                    let mainPart = octal[..<range.lowerBound]
-
-                    decimals = fractional.map { Double(String($0))! }
-
+                    let integerPart = octal[..<range.lowerBound]
                     var (fraction, power) = (0.0, 1.0)
+                    
+                    decimals = fractional.map { Double(String($0))! }
 
                     for number in decimals {
                         fraction += number * (1 / pow(8.0, power))
                         power += 1
                     }
-
-                    return String((Converter().convertBase(fromBase: .octal, number: String(mainPart), toBase: .decimal).getDouble ?? 0.0) + fraction)
+                    return String((Converter().convertBase(fromBase: .octal, number: String(integerPart), toBase: .decimal).getDouble ?? 0.0) + fraction)
                 }
             } else {
                 return String(Converter().convertBase(fromBase: .octal, number: String(octal), toBase: .decimal, isDouble: false).getString ?? "")

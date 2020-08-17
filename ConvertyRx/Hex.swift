@@ -14,9 +14,9 @@ final class Hex: BaseHexConverterProtocol {
             if hex.contains(".") {
                 if let range = hex.range(of: ".") {
                     let fractional = hex[range.upperBound...]
-                    let mainPart = hex[..<range.lowerBound]
+                    let integerPart = hex[..<range.lowerBound]
 
-                    return (Converter().convertBase(fromBase: .hex, number: String(mainPart), toBase: .binary).getString ?? "") + "." + (Converter().convertBase(fromBase: .hex, number: String(fractional), toBase: .binary).getString ?? "")
+                    return (Converter().convertBase(fromBase: .hex, number: String(integerPart), toBase: .binary).getString ?? "") + "." + (Converter().convertBase(fromBase: .hex, number: String(fractional), toBase: .binary).getString ?? "")
 
                 }
             } else {
@@ -31,9 +31,9 @@ final class Hex: BaseHexConverterProtocol {
             if hex.contains(".") {
                 if let range = hex.range(of: ".") {
                     let fractional = hex[range.upperBound...]
-                    let mainPart = hex[..<range.lowerBound]
+                    let integerPart = hex[..<range.lowerBound]
 
-                    return (Converter().convertBase(fromBase: .hex, number: String(mainPart), toBase: .octal).getString ?? "") + "." + (Converter().convertBase(fromBase: .hex, number: String(fractional), toBase: .octal).getString ?? "")
+                    return (Converter().convertBase(fromBase: .hex, number: String(integerPart), toBase: .octal).getString ?? "") + "." + (Converter().convertBase(fromBase: .hex, number: String(fractional), toBase: .octal).getString ?? "")
 
                 }
             } else {
@@ -45,30 +45,30 @@ final class Hex: BaseHexConverterProtocol {
 
     func hexToDecimalFractional(hex: String) -> String {
         if Converter().validInput(inputNumber: hex, inputBase: .hex) {
-            var result: [String] = []
-            var decimals: [Double] = []
+            var decimals: [String] = []
+            var mappedDecimals: [Double] = []
 
             if hex.contains(".") {
                 if let range = hex.range(of: ".") {
                     let fractional = hex[range.upperBound...]
-                    let mainPart = hex[..<range.lowerBound]
+                    let integerPart = hex[..<range.lowerBound]
+                    var (fraction, power) = (0.0, 1.0)
+                    
                     for letter in fractional {
                         for (k, v) in Conversion.hexTable {
                             if String(letter).uppercased() == v {
-                                result.append(contentsOf: [k.replacingOccurrences(of: "\\/hex+.?", with: "", options: .regularExpression)])
+                                decimals.append(contentsOf: [k.replacingOccurrences(of: "\\/hex+.?", with: "", options: .regularExpression)])
                             }
                         }
                     }
+                    
+                    mappedDecimals = decimals.map { Double($0)! }
 
-                    decimals = result.map { Double($0)! }
-                    var (fraction, power) = (0.0, 1.0)
-
-                    for number in decimals {
+                    for number in mappedDecimals {
                         fraction += number * (1 / pow(16.0, power))
                         power += 1
                     }
-
-                    return String((Converter().convertBase(fromBase: .hex, number: String(mainPart), toBase: .decimal).getDouble ?? 0.0) + fraction)
+                    return String((Converter().convertBase(fromBase: .hex, number: String(integerPart), toBase: .decimal).getDouble ?? 0.0) + fraction)
                 }
             } else {
                 return String(Converter().convertBase(fromBase: .hex, number: String(hex), toBase: .decimal, isDouble: false).getString ?? "")

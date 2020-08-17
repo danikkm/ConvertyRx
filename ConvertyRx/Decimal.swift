@@ -12,9 +12,9 @@ final class Decimal: BaseDecimalConverterProtocol {
     func decimalToBinaryFractional(inputDecimal: String) -> String {
         if Converter().validInput(inputNumber: inputDecimal, inputBase: .decimal) {
             guard let decimal = Double(inputDecimal) else { return "" }
-            
             var (binaryDigit, fractionalPart) = (0, decimal.truncatingRemainder(dividingBy: 1))
             var result = ""
+            
             if !(floor(decimal) == decimal) {
                 for _ in 0...Conversion.precision {
                     fractionalPart *= 2
@@ -33,9 +33,9 @@ final class Decimal: BaseDecimalConverterProtocol {
     func decimalToOctalFractional(inputDecimal: String) -> String {
         if Converter().validInput(inputNumber: inputDecimal, inputBase: .decimal) {
             guard let decimal = Double(inputDecimal) else { return "" }
-            
             var (integer, fractionalPart) = (0, decimal.truncatingRemainder(dividingBy: 1))
             var result = ""
+            
             if !(floor(decimal) == decimal) {
                 for _ in 0...Conversion.precision {
                     fractionalPart *= 8
@@ -54,8 +54,7 @@ final class Decimal: BaseDecimalConverterProtocol {
     func decimalToHexFractional(inputDecimal: String) -> String {
         if Converter().validInput(inputNumber: inputDecimal, inputBase: .decimal) {
             guard let decimal = Double(inputDecimal) else { return "" }
-            
-            var (integer, fractionalPart) = (0, decimal.truncatingRemainder(dividingBy: 1))
+            var (integer, fractionalPart,  hexString) = (0, decimal.truncatingRemainder(dividingBy: 1), "")
             var result: [String] = []
             
             if !(floor(decimal) == decimal) {
@@ -65,7 +64,7 @@ final class Decimal: BaseDecimalConverterProtocol {
                     fractionalPart = fractionalPart.truncatingRemainder(dividingBy: 1)
                     result.append(contentsOf: [String(integer) + "/hex"])
                 }
-                var hexString = ""
+                
                 for item in result {
                     for (k, v) in Conversion.hexTable {
                         if item == k {
