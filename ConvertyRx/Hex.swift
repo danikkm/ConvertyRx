@@ -23,7 +23,7 @@ final class Hex: BaseHexConverterProtocol {
                 return Converter().convertBase(fromBase: .hex, number: String(hex), toBase: .binary).getString ?? ""
             }
         }
-        return "Invalid input"
+        return ""
     }
 
     func hexToOctalFractional(hex: String) -> String {
@@ -40,7 +40,7 @@ final class Hex: BaseHexConverterProtocol {
                 return Converter().convertBase(fromBase: .hex, number: String(hex), toBase: .octal).getString ?? ""
             }
         }
-        return "Invalid input"
+        return ""
     }
 
     func hexToDecimalFractional(hex: String) -> String {
@@ -71,9 +71,9 @@ final class Hex: BaseHexConverterProtocol {
                     return String((Converter().convertBase(fromBase: .hex, number: String(mainPart), toBase: .decimal).getDouble ?? 0.0) + fraction)
                 }
             } else {
-                return String(Converter().convertBase(fromBase: .hex, number: String(hex), toBase: .decimal).getDouble ?? 0.0)
+                return String(Converter().convertBase(fromBase: .hex, number: String(hex), toBase: .decimal, isDouble: false).getString ?? "")
             }
         }
-        return "Invalid input"
+        return ""
     }
 }

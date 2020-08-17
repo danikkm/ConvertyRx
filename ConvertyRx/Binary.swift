@@ -29,8 +29,8 @@ final class Binary: BaseBinaryConverterProtocol {
                             }
                         }
                     }
-
                     let pFractional = fractionalSplit.joined(separator: "")
+                    
                     return (Converter().convertBase(fromBase: .binary, number: String(mainPart), toBase: .octal).getString ?? "") +
                         "." + (Converter().convertBase(fromBase: .binary, number: String(pFractional), toBase: .octal).getString ?? "")
                 }
@@ -38,7 +38,7 @@ final class Binary: BaseBinaryConverterProtocol {
                 return Converter().convertBase(fromBase: .binary, number: String(binary), toBase: .octal).getString ?? ""
             }
         }
-        return "Invalid input"
+        return ""
     }
 
     func binaryToDecimalFractional(binary: String) -> String {
@@ -55,7 +55,6 @@ final class Binary: BaseBinaryConverterProtocol {
                         case "1":
                             baseDecimalFraction /= 2.0
                             decimalFraction += baseDecimalFraction
-
                         default:
                             return "Error"
                         }
@@ -63,10 +62,10 @@ final class Binary: BaseBinaryConverterProtocol {
                     return String((Converter().convertBase(fromBase: .binary, number: String(mainPart), toBase: .decimal).getDouble ?? 0.0) + decimalFraction)
                 }
             } else {
-                return String(Converter().convertBase(fromBase: .binary, number: String(binary), toBase: .decimal).getDouble ?? 0.0)
+                return String(Converter().convertBase(fromBase: .binary, number: String(binary), toBase: .decimal, isDouble: false).getString ?? "")
             }
         }
-        return "Invalid input"
+        return ""
     }
 
     func binaryToHexFractional(binary: String) -> String {
@@ -81,7 +80,6 @@ final class Binary: BaseBinaryConverterProtocol {
                         if fraction.count % 2 != 0 {
                             while fractionalSplit[i].count != 4 {
                                 fractionalSplit[i].insert("0", at: fractionalSplit[i].endIndex)
-
                             }
                         } else {
                             while fractionalSplit[i].count != 4 {
@@ -97,7 +95,6 @@ final class Binary: BaseBinaryConverterProtocol {
                 return Converter().convertBase(fromBase: .binary, number: String(binary), toBase: .hex).getString ?? ""
             }
         }
-        return "Invalid input"
+        return ""
     }
-
 }

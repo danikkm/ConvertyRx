@@ -27,7 +27,7 @@ final class Decimal: BaseDecimalConverterProtocol {
                 return String(Converter().convertBase(fromBase: .decimal, number: String(Int(decimal)), toBase: .binary).getString ?? "")
             }
         }
-        return "Invalid input"
+        return ""
     }
     
     func decimalToOctalFractional(inputDecimal: String) -> String {
@@ -48,7 +48,7 @@ final class Decimal: BaseDecimalConverterProtocol {
                 return String(Converter().convertBase(fromBase: .decimal, number: String(Int(decimal)), toBase: .octal).getString ?? "")
             }
         }
-        return "Invalid input"
+        return ""
     }
     
     func decimalToHexFractional(inputDecimal: String) -> String {
@@ -57,7 +57,6 @@ final class Decimal: BaseDecimalConverterProtocol {
             
             var (integer, fractionalPart) = (0, decimal.truncatingRemainder(dividingBy: 1))
             var result: [String] = []
-            
             
             if !(floor(decimal) == decimal) {
                 for _ in 0...Conversion.precision {
@@ -79,6 +78,6 @@ final class Decimal: BaseDecimalConverterProtocol {
                 return String(Converter().convertBase(fromBase: .decimal, number: String(Int(decimal)), toBase: .hex).getString ?? "")
             }
         }
-        return "Invalid input"
+        return ""
     }
 }

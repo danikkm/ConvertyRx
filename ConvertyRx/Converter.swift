@@ -19,7 +19,7 @@ enum RegexBase: String {
     case binary = "0-1"
     case octal = "0-7"
     case decimal = "0-9"
-    case hex = "0-9A-F"
+    case hex = "0-9A-Fa-f"
 }
 
 enum Conversion {
@@ -46,7 +46,7 @@ enum Conversion {
 
 protocol ConversionProtocol {
     func splitStr(text: String, length: Int) -> [Substring]
-    func convertBase(fromBase base: Base, number: String, toBase: Base) -> (getString: String?, getDouble: Double?)
+    func convertBase(fromBase base: Base, number: String, toBase: Base, isDouble: Bool) -> (getString: String?, getDouble: Double?, getInt: Int?)
     func validInput(inputNumber: String, inputBase: RegexBase) -> Bool
 }
 
@@ -55,28 +55,34 @@ public class Converter: ConversionProtocol {
         return stride(from: 0, to: text.count, by: length)
             .map { text[text.index(text.startIndex, offsetBy: $0)..<text.index(text.startIndex, offsetBy: min($0 + length, text.count))] }
     }
-    
-    func convertBase(fromBase base: Base, number: String, toBase: Base) -> (getString: String?, getDouble: Double?) {
-        guard let decimalNumber = UInt64(number, radix: Int(base.rawValue)!) else { return ("", nil) }
-        
+
+    func convertBase(fromBase base: Base, number: String, toBase: Base, isDouble: Bool = true) -> (getString: String?, getDouble: Double?, getInt: Int?) {
+        guard let decimalNumber = UInt64(number, radix: Int(base.rawValue)!) else { return ("", nil, nil) }
+
         switch toBase {
-            case .binary:
-                return (String(decimalNumber, radix: Int(toBase.rawValue)!, uppercase: true), nil)
-            case .octal:
-                return (String(decimalNumber, radix: Int(toBase.rawValue)!, uppercase: true), nil)
-            case .decimal:
-                return ("", Double(decimalNumber))
-            case .hex:
-                return (String(decimalNumber, radix: Int(toBase.rawValue)!, uppercase: true), nil)
+        case .binary:
+            return (String(decimalNumber, radix: Int(toBase.rawValue)!, uppercase: true), nil, nil)
+        case .octal:
+            return (String(decimalNumber, radix: Int(toBase.rawValue)!, uppercase: true), nil, nil)
+        case .decimal:
+            if isDouble {
+                return ("", Double(decimalNumber), nil)
+            }
+            return (String(decimalNumber), nil, Int(decimalNumber))
+        case .hex:
+            return (String(decimalNumber, radix: Int(toBase.rawValue)!, uppercase: true), nil, nil)
         }
     }
-    
+
     func validInput(inputNumber: String, inputBase: RegexBase) -> Bool {
-        if inputNumber.components(separatedBy: ".").count - 1 <= 1 {
+        if inputNumber.isEmpty {
             return true
         }
-        if inputNumber.range(of: "^(?=.)([+-]?([\(inputBase.rawValue)]*)(\\.([\(inputBase.rawValue)]+))?)$", options: .regularExpression) != nil {
-            return true
+
+        if inputNumber.components(separatedBy: ".").count - 1 <= 1 {
+            if inputNumber.range(of: "^(?=.)([+-]?([\(inputBase.rawValue)]*)(\\.([\(inputBase.rawValue)]+))?)$", options: .regularExpression) != nil {
+                return true
+            }
         }
         return false
     }

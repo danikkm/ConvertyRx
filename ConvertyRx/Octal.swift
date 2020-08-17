@@ -22,7 +22,7 @@ final class Octal: BaseOctalConverterProtocol {
                 return Converter().convertBase(fromBase: .octal, number: String(octal), toBase: .binary).getString ?? ""
             }
         }
-        return "Invalid input"
+        return ""
     }
 
     func octalToDecimalFractional(octal: String) -> String {
@@ -46,10 +46,10 @@ final class Octal: BaseOctalConverterProtocol {
                     return String((Converter().convertBase(fromBase: .octal, number: String(mainPart), toBase: .decimal).getDouble ?? 0.0) + fraction)
                 }
             } else {
-                return String(Converter().convertBase(fromBase: .octal, number: String(octal), toBase: .decimal).getDouble ?? 0.0)
+                return String(Converter().convertBase(fromBase: .octal, number: String(octal), toBase: .decimal, isDouble: false).getString ?? "")
             }
         }
-        return "Invalid input"
+        return ""
     }
 
     func octalToHexFractional(octal: String) -> String {
@@ -60,6 +60,6 @@ final class Octal: BaseOctalConverterProtocol {
                 return Converter().convertBase(fromBase: .octal, number: String(octal), toBase: .hex).getString ?? ""
             }
         }
-        return "Invalid input"
+        return ""
     }
 }

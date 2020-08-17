@@ -31,4 +31,3 @@ public protocol BaseHexConverterProtocol {
     func hexToOctalFractional(hex: String) -> String
     func hexToDecimalFractional(hex: String) -> String
 }
-

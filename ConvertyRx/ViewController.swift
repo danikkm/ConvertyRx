@@ -39,9 +39,11 @@ class ViewController: UIViewController {
         configure()
     }
 
-    // TODO:    fix long numbers (change precision in octal/binary)
-    //          fix decimal showing 0.0 instead of textField placeholder
-    //          fix error handling logic
+    // TODO:
+    //      combine binary hex functions into one
+    //      add additional zeros to binary numbers eg: triplets and quadruplets
+    //      replace some if statements with iflet?
+    
     private func configure(){
         binaryTextField.rx.controlEvent([.editingChanged]).asObservable().subscribe({
             [unowned self] _ in
