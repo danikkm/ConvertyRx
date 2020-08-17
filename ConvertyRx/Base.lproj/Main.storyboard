@@ -30,7 +30,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type here" textAlignment="center" minimumFontSize="38" translatesAutoresizingMaskIntoConstraints="NO" id="xvv-qM-z7P">
                                                 <rect key="frame" x="0.0" y="59" width="198.5" height="59"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -46,7 +46,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type here" textAlignment="center" minimumFontSize="38" translatesAutoresizingMaskIntoConstraints="NO" id="dp0-Js-KeF">
                                                 <rect key="frame" x="0.0" y="59" width="198.5" height="59"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -62,7 +62,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type here" textAlignment="center" minimumFontSize="38" translatesAutoresizingMaskIntoConstraints="NO" id="NVi-J7-cXb">
                                                 <rect key="frame" x="0.0" y="59" width="198.5" height="59"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -78,7 +78,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type here" textAlignment="center" minimumFontSize="38" translatesAutoresizingMaskIntoConstraints="NO" id="cN2-o0-Rs2">
                                                 <rect key="frame" x="0.0" y="59" width="198.5" height="59"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no"/>
                                             </textField>
                                         </subviews>
                                     </stackView>

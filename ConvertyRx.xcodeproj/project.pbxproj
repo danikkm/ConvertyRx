@@ -15,6 +15,7 @@
 		0550C7B124E407580099118A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0550C7AF24E407580099118A /* LaunchScreen.storyboard */; };
 		0550C7B924E409620099118A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550C7B824E409620099118A /* AppCoordinator.swift */; };
 		0550C7C124E429A70099118A /* Binary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550C7C024E429A70099118A /* Binary.swift */; };
+		05BD00C324EA99B600AE3DFA /* KeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BD00C224EA99B600AE3DFA /* KeyboardExtension.swift */; };
 		05D598A024E6BDBE0069DF9B /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D5989F24E6BDBE0069DF9B /* Converter.swift */; };
 		05D598A224E6BEC10069DF9B /* BaseConverterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D598A124E6BEC10069DF9B /* BaseConverterProtocol.swift */; };
 		05D598A424E6C5400069DF9B /* Octal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D598A324E6C5400069DF9B /* Octal.swift */; };
@@ -34,6 +35,7 @@
 		0550C7B224E407580099118A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0550C7B824E409620099118A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		0550C7C024E429A70099118A /* Binary.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = Binary.swift; sourceTree = "<group>"; };
+		05BD00C224EA99B600AE3DFA /* KeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardExtension.swift; sourceTree = "<group>"; };
 		05D5989F24E6BDBE0069DF9B /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		05D598A124E6BEC10069DF9B /* BaseConverterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseConverterProtocol.swift; sourceTree = "<group>"; };
 		05D598A324E6C5400069DF9B /* Octal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Octal.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				05D598A324E6C5400069DF9B /* Octal.swift */,
 				05D598A524E6C7C00069DF9B /* Decimal.swift */,
 				05D598A724E6C8EE0069DF9B /* Hex.swift */,
+				05BD00C224EA99B600AE3DFA /* KeyboardExtension.swift */,
 			);
 			path = ConvertyRx;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				0550C7A924E407570099118A /* ViewController.swift in Sources */,
 				05D598A224E6BEC10069DF9B /* BaseConverterProtocol.swift in Sources */,
 				0550C7A524E407570099118A /* AppDelegate.swift in Sources */,
+				05BD00C324EA99B600AE3DFA /* KeyboardExtension.swift in Sources */,
 				05D598A024E6BDBE0069DF9B /* Converter.swift in Sources */,
 				0550C7A724E407570099118A /* SceneDelegate.swift in Sources */,
 			);

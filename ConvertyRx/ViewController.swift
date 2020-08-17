@@ -31,8 +31,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationItem.title = "Converty"
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.hidesBarsWhenKeyboardAppears = true
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        self.hideKeyboardWhenTappedAround()
         self.configure()
     }
 
@@ -68,5 +75,20 @@ class ViewController: UIViewController {
             self.octalTextField.text = self.hex.hexToOctalFractional(hex: self.hexTextField.text ?? "")
             self.decimalTextField.text = self.hex.hexToDecimalFractional(hex: self.hexTextField.text ?? "")
         }).disposed(by: disposeBag)
+    }
+}
+
+extension ViewController {
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height - 196
+            }
+        }
+    }
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
 }
