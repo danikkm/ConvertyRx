@@ -27,7 +27,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type here" textAlignment="center" minimumFontSize="38" translatesAutoresizingMaskIntoConstraints="NO" id="xvv-qM-z7P">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type here" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="38" translatesAutoresizingMaskIntoConstraints="NO" id="xvv-qM-z7P" customClass="CustomTextField" customModule="ConvertyRx" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="59" width="198.5" height="59"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
@@ -43,7 +43,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type here" textAlignment="center" minimumFontSize="38" translatesAutoresizingMaskIntoConstraints="NO" id="dp0-Js-KeF">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type here" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="38" translatesAutoresizingMaskIntoConstraints="NO" id="dp0-Js-KeF" customClass="CustomTextField" customModule="ConvertyRx" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="59" width="198.5" height="59"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
@@ -59,7 +59,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type here" textAlignment="center" minimumFontSize="38" translatesAutoresizingMaskIntoConstraints="NO" id="NVi-J7-cXb">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type here" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="38" translatesAutoresizingMaskIntoConstraints="NO" id="NVi-J7-cXb" customClass="CustomTextField" customModule="ConvertyRx" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="59" width="198.5" height="59"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
@@ -75,7 +75,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type here" textAlignment="center" minimumFontSize="38" translatesAutoresizingMaskIntoConstraints="NO" id="cN2-o0-Rs2">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type here" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="38" translatesAutoresizingMaskIntoConstraints="NO" id="cN2-o0-Rs2" customClass="CustomTextField" customModule="ConvertyRx" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="59" width="198.5" height="59"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no"/>

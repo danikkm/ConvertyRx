@@ -2,7 +2,7 @@
 //  Converter.swift
 //  ConvertyRx
 //
-//  Created by Daniel Dluzhnevsky on 2020-08-14.
+//  Created by Daniel Dluznevskij on 2020-08-14.
 //  Copyright © 2020 Daniel Dluznevskij. All rights reserved.
 //
 
@@ -48,6 +48,9 @@ protocol ConversionProtocol {
     func splitStr(text: String, length: Int) -> [Substring]
     func convertBase(fromBase base: Base, number: String, toBase: Base, isDouble: Bool) -> (getString: String?, getDouble: Double?, getInt: Int?)
     func validInput(inputNumber: String, inputBase: RegexBase) -> Bool
+    func convertHexFractionToDecimalFraction(fraction: String) -> [Double]
+    func convertDecimalToFraction(integer: inout Int, fraction: inout Double, toBase base: Base) -> String
+    func mapHexTable(hex: inout String) -> String
 }
 
 public class Converter: ConversionProtocol {
@@ -84,5 +87,48 @@ public class Converter: ConversionProtocol {
             }
         }
         return false
+    }
+    
+    func convertHexFractionToDecimalFraction(fraction: String) -> [Double] {
+        var result: [String] = []
+        for letter in fraction {
+            for (k, v) in Conversion.hexTable {
+                if String(letter).uppercased() == v {
+                    result.append(contentsOf: [k.replacingOccurrences(of: "\\/hex+.?", with: "", options: .regularExpression)])
+                }
+            }
+        }
+        return result.map { Double($0)! }
+    }
+    
+    func convertDecimalToFraction(integer: inout Int, fraction: inout Double, toBase base: Base) -> String {
+        var result = ""
+        
+        if let numericBase = Double(base.rawValue) {
+            for _ in 0...Conversion.precision {
+                fraction *= numericBase
+                integer = Int(floor(fraction))
+                fraction = fraction.truncatingRemainder(dividingBy: 1)
+                switch base {
+                    case .binary:
+                        result.append(String(integer))
+                    case .octal:
+                        result.append(String(integer))
+                    case .hex:
+                        result += "/" + String(integer) + "/hex"
+                    default:
+                        return ""
+                }
+            }
+        }
+        return result
+    }
+    
+    func mapHexTable(hex: inout String) -> String {
+        for (k, v) in Conversion.hexTable {
+            hex = hex.replacingOccurrences(of: "/" + k, with: v)
+        }
+        
+        return hex
     }
 }

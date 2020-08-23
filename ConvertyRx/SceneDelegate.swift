@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  ConvertyRx
 //
-//  Created by Daniel Dluzhnevsky on 2020-08-12.
+//  Created by Daniel Dluznevskij on 2020-08-12.
 //  Copyright © 2020 Daniel Dluznevskij. All rights reserved.
 //
 

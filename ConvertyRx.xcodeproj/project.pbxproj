@@ -15,12 +15,14 @@
 		0550C7B124E407580099118A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0550C7AF24E407580099118A /* LaunchScreen.storyboard */; };
 		0550C7B924E409620099118A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550C7B824E409620099118A /* AppCoordinator.swift */; };
 		0550C7C124E429A70099118A /* Binary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550C7C024E429A70099118A /* Binary.swift */; };
+		05ABA7BC24F0073300F0BC4B /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ABA7BB24F0073300F0BC4B /* StringExtension.swift */; };
 		05BD00C324EA99B600AE3DFA /* KeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BD00C224EA99B600AE3DFA /* KeyboardExtension.swift */; };
 		05D598A024E6BDBE0069DF9B /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D5989F24E6BDBE0069DF9B /* Converter.swift */; };
 		05D598A224E6BEC10069DF9B /* BaseConverterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D598A124E6BEC10069DF9B /* BaseConverterProtocol.swift */; };
 		05D598A424E6C5400069DF9B /* Octal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D598A324E6C5400069DF9B /* Octal.swift */; };
 		05D598A624E6C7C00069DF9B /* Decimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D598A524E6C7C00069DF9B /* Decimal.swift */; };
 		05D598A824E6C8EE0069DF9B /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D598A724E6C8EE0069DF9B /* Hex.swift */; };
+		05DD1A5724F2E42F0072B739 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DD1A5624F2E42F0072B739 /* CustomTextField.swift */; };
 		49C5EFC03039ED6352E392AA /* Pods_ConvertyRx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C826A1F549C25727FDE4775C /* Pods_ConvertyRx.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,12 +37,14 @@
 		0550C7B224E407580099118A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0550C7B824E409620099118A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		0550C7C024E429A70099118A /* Binary.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = Binary.swift; sourceTree = "<group>"; };
+		05ABA7BB24F0073300F0BC4B /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		05BD00C224EA99B600AE3DFA /* KeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardExtension.swift; sourceTree = "<group>"; };
 		05D5989F24E6BDBE0069DF9B /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		05D598A124E6BEC10069DF9B /* BaseConverterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseConverterProtocol.swift; sourceTree = "<group>"; };
 		05D598A324E6C5400069DF9B /* Octal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Octal.swift; sourceTree = "<group>"; };
 		05D598A524E6C7C00069DF9B /* Decimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decimal.swift; sourceTree = "<group>"; };
 		05D598A724E6C8EE0069DF9B /* Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hex.swift; sourceTree = "<group>"; };
+		05DD1A5624F2E42F0072B739 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		2B18AF851110DFEB9FAC5180 /* Pods-ConvertyRx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConvertyRx.release.xcconfig"; path = "Target Support Files/Pods-ConvertyRx/Pods-ConvertyRx.release.xcconfig"; sourceTree = "<group>"; };
 		C826A1F549C25727FDE4775C /* Pods_ConvertyRx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConvertyRx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC2FF82C771319262973AADF /* Pods-ConvertyRx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConvertyRx.debug.xcconfig"; path = "Target Support Files/Pods-ConvertyRx/Pods-ConvertyRx.debug.xcconfig"; sourceTree = "<group>"; };
@@ -82,6 +86,7 @@
 				0550C7A424E407570099118A /* AppDelegate.swift */,
 				0550C7A624E407570099118A /* SceneDelegate.swift */,
 				0550C7A824E407570099118A /* ViewController.swift */,
+				05DD1A5624F2E42F0072B739 /* CustomTextField.swift */,
 				0550C7AA24E407570099118A /* Main.storyboard */,
 				0550C7AD24E407580099118A /* Assets.xcassets */,
 				0550C7AF24E407580099118A /* LaunchScreen.storyboard */,
@@ -94,6 +99,7 @@
 				05D598A524E6C7C00069DF9B /* Decimal.swift */,
 				05D598A724E6C8EE0069DF9B /* Hex.swift */,
 				05BD00C224EA99B600AE3DFA /* KeyboardExtension.swift */,
+				05ABA7BB24F0073300F0BC4B /* StringExtension.swift */,
 			);
 			path = ConvertyRx;
 			sourceTree = "<group>";
@@ -230,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05DD1A5724F2E42F0072B739 /* CustomTextField.swift in Sources */,
 				05D598A624E6C7C00069DF9B /* Decimal.swift in Sources */,
 				05D598A824E6C8EE0069DF9B /* Hex.swift in Sources */,
 				0550C7B924E409620099118A /* AppCoordinator.swift in Sources */,
@@ -238,6 +245,7 @@
 				0550C7A924E407570099118A /* ViewController.swift in Sources */,
 				05D598A224E6BEC10069DF9B /* BaseConverterProtocol.swift in Sources */,
 				0550C7A524E407570099118A /* AppDelegate.swift in Sources */,
+				05ABA7BC24F0073300F0BC4B /* StringExtension.swift in Sources */,
 				05BD00C324EA99B600AE3DFA /* KeyboardExtension.swift in Sources */,
 				05D598A024E6BDBE0069DF9B /* Converter.swift in Sources */,
 				0550C7A724E407570099118A /* SceneDelegate.swift in Sources */,
