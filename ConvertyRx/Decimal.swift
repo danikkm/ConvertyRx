@@ -34,7 +34,7 @@ final class Decimal: BaseDecimalConverterProtocol {
                     
                     let convertedIntegerPart = Converter().convertBase(fromBase: base, number: integerPart, toBase: .decimal).getDouble ?? 0.0
                     
-                    return String(convertedIntegerPart + fraction)
+                    return String(convertedIntegerPart + fraction).removeTrailingZeros
                 }
             } else  {
                 return String(Converter().convertBase(fromBase: base, number: number, toBase: .decimal).getDouble ?? 0.0)
@@ -58,7 +58,7 @@ final class Decimal: BaseDecimalConverterProtocol {
                 
                 let convertedIntegerPart = Converter().convertBase(fromBase: .decimal, number: String(Int(decimal)), toBase: base).getString ?? ""
                 
-                return convertedIntegerPart + "." + convertedNumber
+                return convertedIntegerPart + "." + convertedNumber.removeTrailingZeros
             } else {
                 return String(Converter().convertBase(fromBase: .decimal, number: String(Int(decimal)), toBase: base).getString ?? "")
             }

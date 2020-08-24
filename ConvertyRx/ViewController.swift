@@ -44,11 +44,9 @@ class ViewController: UIViewController {
         self.configureTextFields()
     }
 
-    // TODO: remove unnecessary zeros
     // TODO: set maximum bounds for the specific bases, i.e fix overflow issues
-    // TODO: add additional zeros to binary numbers eg: triplets and quadruplets
-    // TODO: refactor(rename some of the vars)
     // FIXME: fix navigationItem title disappearing sometimes
+    // TODO: set maximum number of digits for decimal 
 
     private func configure(){
         binaryTextField.rx.controlEvent([.editingChanged]).asObservable().subscribe({
@@ -67,9 +65,9 @@ class ViewController: UIViewController {
         
         decimalTextField.rx.controlEvent([.editingChanged]).asObservable().subscribe({
             [unowned self] _ in
-            self.binaryTextField.text = Decimal().convertFromDecimalFractional(toBase: .binary, number: self.decimalTextField.text ?? "")
-            self.octalTextField.text = Decimal().convertFromDecimalFractional(toBase: .octal, number: self.decimalTextField.text ?? "")
-            self.hexTextField.text = Decimal().convertFromDecimalFractional(toBase: .hex, number: self.decimalTextField.text ?? "")
+            self.binaryTextField.text = self.decimal.convertFromDecimalFractional(toBase: .binary, number: self.decimalTextField.text ?? "")
+            self.octalTextField.text = self.decimal.convertFromDecimalFractional(toBase: .octal, number: self.decimalTextField.text ?? "")
+            self.hexTextField.text = self.decimal.convertFromDecimalFractional(toBase: .hex, number: self.decimalTextField.text ?? "")
         }).disposed(by: disposeBag)
         
         hexTextField.rx.controlEvent([.editingChanged]).asObservable().subscribe({
@@ -85,7 +83,7 @@ class ViewController: UIViewController {
 extension ViewController: UITextFieldDelegate {
     private func configureTextFields() {
         self.binaryTextField.delegate = self
-        self.binaryTextField.maxLength = 24
+        self.binaryTextField.maxLength = 42
         self.binaryTextField.valueType = .binary
         
         self.octalTextField.delegate = self

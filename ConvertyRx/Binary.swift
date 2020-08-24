@@ -29,7 +29,7 @@ final class Binary: BaseBinaryConverterProtocol {
                             }
                         }
                     }
-
+                    print(fractionalSplit)
                     let joinedFractional = fractionalSplit.joined(separator: "")
                     let convertedIntegerPart = Converter().convertBase(fromBase: .binary, number: String(integerPart), toBase: .octal).getString ?? ""
                     let convertedFractionalPart = Converter().convertBase(fromBase: .binary, number: String(joinedFractional), toBase: .octal).getString ?? ""
